@@ -1,0 +1,23 @@
+.main {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    height: 54px;
+    background-color: #87ceeb;
+    align-items: center;
+}
+
+.navbar{
+    display: inline;
+    float: right;
+    margin-right: 10px;
+}
+
+.navbar li{
+    display: inline;
+}

@@ -9,38 +9,68 @@
     {% else %}
         <title>Welcome to blog</title>
     {% endif %}
+    {% block head %}
+    {% endblock %}
 </head>
 <body>
 <nav class="nav">
-    <span class="logo"></span>
-    <ul class="navbar">
-        <li>
-            <a href="{{ url_for('index') }}">Home</a>
-        </li>
-        {% if current_user.is_anonymous %}
+    <nav>
+        <span class="logo"></span>
+    </nav>
+    <h1>
+        欢迎使用可Python云编程计算器
+    </h1>
+    <nav>
+        <ul class="navbar">
             <li>
-                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('index') }}">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span>主页</span>
+                </a>
             </li>
-        {% else %}
-            <li>
-                <a href="{{ url_for('user',username=current_user.username) }}">Profile</a>
-            </li>
-            <li>
-                <a href="{{ url_for('logout') }}">Logout</a>
-            </li>
-        {% endif %}
-    </ul>
-</nav>
-<hr>
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
+            {% if current_user.is_anonymous %}
+                <li>
+                    <a href="{{ url_for('login') }}">
+                        <i class="fa fa-sign-in fa-2x"></i>
+                        <span>登录</span>
+                    </a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ url_for('user',username=current_user.username) }}">
+                        <i class="fa fa-user fa-2x"></i>
+                        <span>我的</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('logout') }}">
+                        <i class="fa fa-sign-out fa-2x"></i>
+                        <span>登出</span>
+                    </a>
+                </li>
+            {% endif %}
         </ul>
-    {% endif %}
-{% endwith %}
-{% block content %}{% endblock %}
+    </nav>
+</nav>
+<div class="banner">
+
+</div>
+<div class="main">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</div>
+
+<div class="side-ad left-ad"></div>
+<div class="side-ad right-ad"></div>
+<div class="bottom-right-ad"></div>
+<div class="bottom-ad"></div>
 </body>
 </html>

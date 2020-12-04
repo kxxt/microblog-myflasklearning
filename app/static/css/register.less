@@ -1,9 +1,18 @@
+@import "common";
+
+@btn-color: lightseagreen;
+@btn-hover-color: rgba(100,178,250,1);
+
+.main {
+    background-color: transparent;
+    box-shadow: none;
+}
 .register-main {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /*background-color: pink;*/
+    //background-color: pink;
 }
 
 .register-box {
@@ -15,9 +24,56 @@
     height: 300px;
     box-shadow: 0 0 4px 10px rgba(0,0,0,.3);
     padding: 5%;
+    background-color: rgba(255,255,255,.4);
 }
 
 .register-box h1 {
     margin-bottom: 40px;
     text-shadow: 60px -30px 5px black;
+}
+
+.form {
+    label {
+        display: inline-block;
+        font-size: .4rem;
+        width: 3rem;
+    }
+
+    input {
+        font-size: .4rem;
+    }
+
+    div {
+        margin-bottom:.3rem;
+    }
+
+    .submit-div{
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    #submit{
+        padding: .2rem;
+        background-color: @btn-color;
+        border: 1px solid @btn-color;
+        border-radius: .2rem;
+        box-shadow: 0 0 20px 10px @btn-color;
+    }
+
+    #submit:hover{
+        background-color: @btn-hover-color;
+        box-shadow:0 0 20px 10px @btn-hover-color;
+        border-color: @btn-hover-color;
+    }
+    
+    #submit:focus{
+        background-color: @btn-hover-color;
+        box-shadow:0 0 20px 10px @btn-hover-color;
+        border-color: @btn-hover-color;
+    }
+
+    #username, #email, #password, #password2 {
+        border:none;
+        border-radius: .1rem;
+    }
 }

@@ -1,23 +1,65 @@
+.main {
+  background-color: transparent;
+  box-shadow: none;
+}
 .register-main {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*background-color: pink;*/
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .register-box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 600px;
-    height: 300px;
-    box-shadow: 0 0 4px 10px rgba(0,0,0,.3);
-    padding: 5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+  box-shadow: 0 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 5%;
+  background-color: rgba(255, 255, 255, 0.4);
 }
-
 .register-box h1 {
-    margin-bottom: 40px;
-    text-shadow: 60px -30px 5px black;
+  margin-bottom: 40px;
+  text-shadow: 60px -30px 5px black;
 }
+.form label {
+  display: inline-block;
+  font-size: 0.4rem;
+  width: 3rem;
+}
+.form input {
+  font-size: 0.4rem;
+}
+.form div {
+  margin-bottom: 0.3rem;
+}
+.form .submit-div {
+  margin-top: 1rem;
+  text-align: center;
+}
+.form #submit {
+  padding: 0.2rem;
+  background-color: lightseagreen;
+  border: 1px solid lightseagreen;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 20px 10px lightseagreen;
+}
+.form #submit:hover {
+  background-color: #64b2fa;
+  box-shadow: 0 0 20px 10px #64b2fa;
+  border-color: #64b2fa;
+}
+.form #submit:focus {
+  background-color: #64b2fa;
+  box-shadow: 0 0 20px 10px #64b2fa;
+  border-color: #64b2fa;
+}
+.form #username,
+.form #email,
+.form #password,
+.form #password2 {
+  border: none;
+  border-radius: 0.1rem;
+}
+/*# sourceMappingURL=register.css.map */

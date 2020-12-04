@@ -1,4 +1,4 @@
-<html lang="zh">
+<html lang="zh" font-size="50">
 <head>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.css') }}">
@@ -53,7 +53,13 @@
     </nav>
 </nav>
 <div class="banner">
+    <h5>
+        你还在用树莓派zero羸弱的算力,0.5GHz主频的CPU,学习Python吗?<br>
+        或者你还在用拉跨的一核/2G/1M的非独占云服务器学习Python吗?<br>
+        赶快来加入年度黄金会员吧! 专用云服务器8核/16G/1T + 4路 TPU  <br>
+        一家三口的日子,再精打细算,有关学习的事情,绝对不能省钱! <br> ----- 李华,18岁,大学生, 用花呗给女儿买了可Python云编程计算器和年度黄金会员<br>
 
+    </h5>
 </div>
 <div class="main">
     {% with messages = get_flashed_messages() %}
@@ -68,9 +74,39 @@
     {% block content %}{% endblock %}
 </div>
 
-<div class="side-ad left-ad"></div>
-<div class="side-ad right-ad"></div>
+<div class="side-ad left-ad">
+    <h5>
+        点击此处购买专属GPU订阅!<br>
+        <hr>
+        免费试用5天哦!<br>
+        还有专属客服小姐姐996在线答疑!<br>
+        <hr>
+        听说 , 下雨天 , Python 人工智能学习和 专属GPU订阅更配哦!
+        <br>
+        <hr>
+        点我订阅!只需188元/年!
+        <hr>
+        连续包年 , 首年打3折哦!
+    </h5>
+</div>
+<div class="side-ad right-ad">
+    <h5>
+        CPU/内存升级版计算器云开发环境!
+        <hr>
+        每G内存每年仅需10块钱!
+        <hr>
+        10块钱, 你买不了吃亏 , 买不了上当 , 一顿饭的钱 , 带来数倍性能提示!
+        <hr>
+        还犹豫什么? 赶快来点我购买!
+        <hr>
+        另外 , 升级双路金志强CPU 每年100元起!
+    </h5>
+</div>
 <div class="bottom-right-ad"></div>
-<div class="bottom-ad"></div>
+<div class="bottom-ad">
+    <h3>
+        现在加入计算器年度黄金会员!!!只要888元. 立省80%! 新用户更享折上折! (内含 Minecraft Pi等多款游戏)
+    </h3>
+</div>
 </body>
 </html>

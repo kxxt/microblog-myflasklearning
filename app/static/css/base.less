@@ -1,62 +1,76 @@
+@main-width: 18rem;
+
 .main {
-  margin: 0.2rem auto;
-  padding: 0.3rem;
-  width: 18rem;
-  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
+  margin: .2rem auto;
+  padding: .3rem;
+  width: @main-width;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, .3);
   background-color: white;
 }
+
 .nav {
   display: flex;
   position: sticky;
   height: 1.2rem;
   background-color: #87ceeb;
   align-items: center;
+
   /*flex-start : 头部开始
     flex-end
     center
     space-around 评分剩余空间
     space-between 两边贴边,再平分剩余空间*/
   justify-content: space-between;
+
+  h1 {
+    font-weight: 400;
+    font-size: .8rem;
+  }
 }
-.nav h1 {
-  font-weight: 400;
-  font-size: 0.8rem;
-}
+
 .navbar {
   display: inline;
   float: right;
-  margin-right: 0.2rem;
+  margin-right: .2rem;
+
+  li {
+    display: inline;
+  }
 }
-.navbar li {
-  display: inline;
-}
+
 .navbar > li > a > i {
   vertical-align: middle;
 }
+
 .navbar > li > a > span {
   vertical-align: middle;
-  font-size: 0.5rem;
+  font-size: .5rem;
 }
+
 .navbar > li {
   display: inline-block;
   background-color: purple;
 }
+
+
 .banner {
   height: 3.5rem;
   background-color: yellow;
+  h5 {
+    text-align: center;
+    line-height: 3.5rem / 5;
+  }
 }
-.banner h5 {
-  text-align: center;
-  line-height: 0.7rem;
-}
+
 .side-ad {
   position: fixed;
   width: 3rem;
   height: 8rem;
   bottom: 2rem;
   background-color: green;
-  padding: 0.1rem;
+  padding: .1rem;
 }
+
 .bottom-right-ad {
   visibility: hidden;
   position: fixed;
@@ -66,23 +80,25 @@
   height: 5rem;
   background-color: red;
 }
+
 .bottom-ad {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 1.6rem;
   background-color: hotpink;
+  h3 {
+    text-align:center;
+    line-height:1.6rem;
+  }
 }
-.bottom-ad h3 {
-  text-align: center;
-  line-height: 1.6rem;
-}
+
 .left-ad {
   right: 50%;
-  margin-right: 9.5rem;
+  margin-right: @main-width / 2 + .5rem;
 }
+
 .right-ad {
   left: 50%;
-  margin-left: 9.5rem;
+  margin-left: @main-width / 2 + .5rem;
 }
-/*# sourceMappingURL=base.css.map */

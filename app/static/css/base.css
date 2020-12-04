@@ -6,38 +6,45 @@
   background-color: white;
 }
 .nav {
-  display: flex;
   position: sticky;
   height: 1.2rem;
   background-color: #87ceeb;
-  align-items: center;
   /*flex-start : 头部开始
     flex-end
     center
     space-around 评分剩余空间
     space-between 两边贴边,再平分剩余空间*/
-  justify-content: space-between;
 }
 .nav h1 {
   font-weight: 400;
   font-size: 0.8rem;
+  line-height: 1.2rem;
 }
-.navbar {
-  display: inline;
-  float: right;
+.nav .left-nav {
+  position: absolute;
+  top: 0.1rem;
+  height: 1rem;
+  float: left;
+  margin-left: 0.2rem;
+}
+.nav .navbar {
+  height: 0.7rem;
+  top: 0.25rem;
+  right: 0;
+  position: absolute;
   margin-right: 0.2rem;
 }
-.navbar li {
+.nav .navbar li {
   display: inline;
 }
-.navbar > li > a > i {
+.navbar li > a > i {
   vertical-align: middle;
 }
-.navbar > li > a > span {
+.navbar li > a > span {
   vertical-align: middle;
   font-size: 0.5rem;
 }
-.navbar > li {
+.navbar li {
   display: inline-block;
   background-color: purple;
 }
@@ -78,11 +85,9 @@
   line-height: 1.6rem;
 }
 .left-ad {
-  right: 50%;
-  margin-right: 9.5rem;
+  left: 0.3rem;
 }
 .right-ad {
-  left: 50%;
-  margin-left: 9.5rem;
+  right: 0.3rem;
 }
 /*# sourceMappingURL=base.css.map */

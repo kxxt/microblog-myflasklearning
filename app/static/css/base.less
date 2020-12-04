@@ -1,4 +1,5 @@
 @main-width: 18rem;
+@nav-height: 1.2rem;
 
 .main {
   margin: .2rem auto;
@@ -9,45 +10,57 @@
 }
 
 .nav {
-  display: flex;
+  //display: flex;
   position: sticky;
-  height: 1.2rem;
+  height: @nav-height;
   background-color: #87ceeb;
-  align-items: center;
+  //align-items: center;
 
   /*flex-start : 头部开始
     flex-end
     center
     space-around 评分剩余空间
     space-between 两边贴边,再平分剩余空间*/
-  justify-content: space-between;
+  //justify-content: space-between;
 
   h1 {
     font-weight: 400;
     font-size: .8rem;
+    line-height: @nav-height;
+  }
+
+  .left-nav {
+    position: absolute;
+    top: @nav-height / 2 - 0.5rem;
+    height: 1rem;
+    float: left;
+    margin-left: .2rem;
+
+  }
+
+  .navbar {
+    height: .7rem;
+    top: @nav-height / 2 - .35rem;
+    right: 0;
+    position: absolute;
+    margin-right: .2rem;
+    li {
+      display: inline;
+    }
   }
 }
 
-.navbar {
-  display: inline;
-  float: right;
-  margin-right: .2rem;
 
-  li {
-    display: inline;
-  }
-}
-
-.navbar > li > a > i {
+.navbar li > a > i {
   vertical-align: middle;
 }
 
-.navbar > li > a > span {
+.navbar li > a > span {
   vertical-align: middle;
   font-size: .5rem;
 }
 
-.navbar > li {
+.navbar li {
   display: inline-block;
   background-color: purple;
 }
@@ -56,6 +69,7 @@
 .banner {
   height: 3.5rem;
   background-color: yellow;
+
   h5 {
     text-align: center;
     line-height: 3.5rem / 5;
@@ -87,18 +101,21 @@
   width: 100%;
   height: 1.6rem;
   background-color: hotpink;
+
   h3 {
-    text-align:center;
-    line-height:1.6rem;
+    text-align: center;
+    line-height: 1.6rem;
   }
 }
 
 .left-ad {
-  right: 50%;
-  margin-right: @main-width / 2 + .5rem;
+  left: .3rem;
+  //right: 50%;
+  //margin-right: @main-width / 2 + .5rem;
 }
 
 .right-ad {
-  left: 50%;
-  margin-left: @main-width / 2 + .5rem;
+  //left: 50%;
+  //margin-left: @main-width / 2 + .5rem;
+  right: .3rem;
 }

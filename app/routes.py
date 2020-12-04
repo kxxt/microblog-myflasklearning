@@ -94,3 +94,31 @@ def edit_profile():
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
     return render_template('edit-profile.html', form=form, title="Edit Profile")
+
+
+@app.route('/follow/<username>')
+@login_required
+def follow(username):
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        flash(f'没有找到用户 {username}.')
+        return redirect(url_for('index'))
+    if user == current_user:
+        flash('你不能关注你自己哦!')
+        return redirect(url_for('user', username=username))
+    current_user.follow(user)
+    db.session.commit()
+    flash(f"你关注了{username}")
+    return redirect(url_for('user', username=username))
+
+
+@app.route('/unfollow/<username>')
+@login_required
+def unfollow(username):
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        flash(f'没有找到用户 {username}.')
+        return redirect(url_for('index'))
+    if user == current_user:
+        flash("你******不能取消关注你自己")
+        return redirect(url_for('user', username=username))

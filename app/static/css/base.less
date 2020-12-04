@@ -6,14 +6,14 @@
   padding: .3rem;
   width: @main-width;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, .3);
-  background-color: white;
+  background-color: rgba(255,255,255,.8);
 }
 
 .nav {
   //display: flex;
   position: sticky;
   height: @nav-height;
-  background-color: #87ceeb;
+  background-color: rgba(135, 206, 235,.3);
   //align-items: center;
 
   /*flex-start : 头部开始
@@ -38,8 +38,9 @@
 
   }
 
-  .navbar {
+  .navbar ul{
     height: .7rem;
+    line-height: .7rem;
     top: @nav-height / 2 - .35rem;
     right: 0;
     position: absolute;
@@ -61,6 +62,8 @@
 }
 
 .navbar li {
+  line-height:.7rem;
+  height: .7rem;
   display: inline-block;
   background-color: purple;
 }
@@ -68,11 +71,12 @@
 
 .banner {
   height: 3.5rem;
-  background-color: yellow;
+  background-color: rgba(255,255,0,.7);
 
   h5 {
     text-align: center;
     line-height: 3.5rem / 5;
+    font-size: .4rem;
   }
 }
 
@@ -100,9 +104,9 @@
   bottom: 0;
   width: 100%;
   height: 1.6rem;
-  background-color: hotpink;
+  background-color: rgba(243,169,232,.7);
 
-  h3 {
+  h4 {
     text-align: center;
     line-height: 1.6rem;
   }

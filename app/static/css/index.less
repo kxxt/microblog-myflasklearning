@@ -25,9 +25,11 @@
 
   #title {
     margin-left: .5rem;
-
+    background: linear-gradient(to right top,rgba(31,178,170,.5),rgba(131,278,270,.5));
     height: .5rem;
     vertical-align: middle;
+    border: none;
+    border-radius: .2rem;
     flex-grow: 1;
   }
 
@@ -46,13 +48,17 @@
     width: 100%;
     min-height: 5rem;
     font-size: .33rem;
+    border: none;
+    padding: .2rem;
+    border-radius: .4rem;
+    background: rgba(0,191,255,.3);
   }
 
   @btn-color: lightseagreen;
   @btn-hover-color: rgba(100, 178, 250, 1);
 
   .submit-div {
-    margin-top: .2rem;
+    margin-top: .5rem;
     display: block;
     text-align: center;
   }
@@ -62,18 +68,18 @@
     background-color: @btn-color;
     border: 1px solid @btn-color;
     border-radius: .2rem;
-    box-shadow: 0 0 20px 10px @btn-color;
+    box-shadow: 0 0 18px 10px @btn-color;
   }
 
   #submit:hover {
     background-color: @btn-hover-color;
-    box-shadow: 0 0 20px 10px @btn-hover-color;
+    box-shadow: 0 0 18px 10px @btn-hover-color;
     border-color: @btn-hover-color;
   }
 
   #submit:focus {
     background-color: @btn-hover-color;
-    box-shadow: 0 0 20px 10px @btn-hover-color;
+    box-shadow: 0 0 18px 10px @btn-hover-color;
     border-color: @btn-hover-color;
   }
 }

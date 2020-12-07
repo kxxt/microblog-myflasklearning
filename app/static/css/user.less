@@ -1,0 +1,51 @@
+@avatar-size: .8rem;
+@act-btn-height: .6rem;
+
+.user-profile {
+  padding: .5rem;
+  min-height: 2rem;
+
+  .user-profile-avatar {
+    float: left;
+    background-size: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .user-profile-info {
+    float: right;
+  }
+}
+
+
+.clearfix {
+  *zoom: 1;
+
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.post-head-act {
+  display: inline-block;
+  height: @act-btn-height;
+  line-height: @act-btn-height;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 .2rem;
+  background-color: deepskyblue;
+  color: white;
+}
+
+.btn-follow {
+
+}
+
+.btn-unfollow {
+  background-color: tomato;
+}

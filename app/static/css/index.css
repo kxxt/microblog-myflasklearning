@@ -92,8 +92,11 @@
 }
 .post-form-box #title {
   margin-left: 0.5rem;
+  background: linear-gradient(to right top, rgba(31, 178, 170, 0.5), rgba(131, 255, 255, 0.5));
   height: 0.5rem;
   vertical-align: middle;
+  border: none;
+  border-radius: 0.2rem;
   flex-grow: 1;
 }
 .post-form-box .body-input-label {
@@ -110,9 +113,13 @@
   width: 100%;
   min-height: 5rem;
   font-size: 0.33rem;
+  border: none;
+  padding: 0.2rem;
+  border-radius: 0.4rem;
+  background: rgba(0, 191, 255, 0.3);
 }
 .post-form-box .submit-div {
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
   display: block;
   text-align: center;
 }
@@ -121,16 +128,16 @@
   background-color: lightseagreen;
   border: 1px solid lightseagreen;
   border-radius: 0.2rem;
-  box-shadow: 0 0 20px 10px lightseagreen;
+  box-shadow: 0 0 18px 10px lightseagreen;
 }
 .post-form-box #submit:hover {
   background-color: #64b2fa;
-  box-shadow: 0 0 20px 10px #64b2fa;
+  box-shadow: 0 0 18px 10px #64b2fa;
   border-color: #64b2fa;
 }
 .post-form-box #submit:focus {
   background-color: #64b2fa;
-  box-shadow: 0 0 20px 10px #64b2fa;
+  box-shadow: 0 0 18px 10px #64b2fa;
   border-color: #64b2fa;
 }
 /*# sourceMappingURL=index.css.map */

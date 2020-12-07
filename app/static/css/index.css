@@ -1,5 +1,136 @@
+.post {
+  padding: 0.3rem;
+  margin: 0.3rem 0;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, rgba(25, 250, 233, 0.3), rgba(233, 230, 23, 0.4));
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.6);
+}
+.post .post-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.post .post-head .post-head-left .post-useravatar {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  vertical-align: middle;
+}
+.post .post-head .post-head-left .post-userinfo {
+  vertical-align: middle;
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 0.3rem;
+}
+.post .post-head .post-head-left .post-userinfo .post-username {
+  font-size: 0.34rem;
+  font-weight: 700;
+}
+.post .post-head .post-head-left .post-userinfo .post-userdesp {
+  font-size: 0.3rem;
+}
+.post .post-head .post-head-right .post-head-act {
+  display: inline-block;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 0.2rem;
+  background-color: deepskyblue;
+  color: white;
+}
+.post .post-head .post-head-right .btn-unfollow {
+  background-color: tomato;
+}
+.post .post-body {
+  margin: 0.2rem 0;
+}
+.post .post-body h2 {
+  font-size: 0.6rem;
+}
+.post .post-body p {
+  font-size: 0.35rem;
+}
+.post .post-tail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.post .post-tail .post-tail-act {
+  display: inline-block;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 0.2rem;
+  background-color: dodgerblue;
+  color: white;
+}
+.post .post-tail .post-tail-act .fa {
+  font-size: 0.3rem;
+}
 .login-notify {
   text-align: center;
   font-weight: 400;
+}
+.post-form-box h3 {
+  text-align: center;
+}
+.post-form-box .title-input-label {
+  font-size: 0.5rem;
+  display: inline-block;
+  line-height: 0.5rem;
+  height: 0.5rem;
+  vertical-align: middle;
+}
+.post-form-box .title-div {
+  display: flex;
+  justify-content: space-between;
+}
+.post-form-box #title {
+  margin-left: 0.5rem;
+  height: 0.5rem;
+  vertical-align: middle;
+  flex-grow: 1;
+}
+.post-form-box .body-input-label {
+  font-size: 0.5rem;
+  display: block;
+  line-height: 0.5rem;
+  height: 0.5rem;
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+.post-form-box #body {
+  width: 100%;
+  min-height: 5rem;
+  font-size: 0.33rem;
+}
+.post-form-box .submit-div {
+  margin-top: 0.2rem;
+  display: block;
+  text-align: center;
+}
+.post-form-box #submit {
+  padding: 0.2rem;
+  background-color: lightseagreen;
+  border: 1px solid lightseagreen;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 20px 10px lightseagreen;
+}
+.post-form-box #submit:hover {
+  background-color: #64b2fa;
+  box-shadow: 0 0 20px 10px #64b2fa;
+  border-color: #64b2fa;
+}
+.post-form-box #submit:focus {
+  background-color: #64b2fa;
+  box-shadow: 0 0 20px 10px #64b2fa;
+  border-color: #64b2fa;
 }
 /*# sourceMappingURL=index.css.map */

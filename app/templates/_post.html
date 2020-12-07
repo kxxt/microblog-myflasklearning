@@ -1,6 +1,58 @@
-<table>
-    <tr valign="top">
-        <td><img src="{{ post.author.avatar(36) }}"></td>
-        <td>{{ post.author.username }} says:<br>{{ post.body }}</td>
-    </tr>
-</table>
+<div class="post">
+    <div class="post-head">
+        <div class="post-head-left">
+            <div class="post-useravatar" style="background-image: url({{ post.author.avatar(32) }});">
+
+            </div>
+            <div class="post-userinfo">
+                <span class="post-username">{{ post.author.username }}</span>
+                <span class="post-userdesp">{{ post.author.about_me }}</span>
+            </div>
+        </div>
+        <div class="post-head-right">
+
+            {% if current_user.is_following(post.author) %}
+                <a class="post-head-act btn-unfollow"
+                   href="{{ url_for('unfollow',username=post.author.username) }}">取关</a>
+            {% else %}
+                <a class="post-head-act btn-follow" href="{{ url_for('follow',username=post.author.username) }}">关注</a>
+            {% endif %}
+
+        </div>
+    </div>
+    <div class="post-body">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+    </div>
+    <div class="post-tail">
+        <div class="post-tail-left">
+            <a href="#" class="post-tail-act btn-upvote">
+                <span class="fa fa-thumbs-o-up"></span>
+                <span>{{ post.up_vote_cnt }}</span>
+            </a>
+            <a href="#" class="post-tail-act btn-downvote">
+                <span class="fa fa-thumbs-o-down"></span>
+                <span>{{ post.down_vote_cnt }}</span>
+            </a>
+            <a href="#" class="post-tail-act btn-like">
+                <span class="fa fa-heart"></span>
+                <span>喜欢</span>
+            </a>
+            <a href="#" class="post-tail-act btn-favorite">
+                <span class="fa fa-star"></span>
+                <span>收藏</span>
+            </a>
+
+        </div>
+        <div class="post-tail-right">
+            <a href="#" class="post-tail-act btn-comment">
+                <span class="fa fa-comment"></span>
+                <span>评论</span>
+            </a>
+            <a href="#" class="post-tail-act btn-flag">
+                <span class="fa fa-flag"></span>
+                <span>举报</span>
+            </a>
+        </div>
+    </div>
+</div>

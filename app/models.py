@@ -52,7 +52,7 @@ class User(UserMixin, db.Model):
     def get_followed_posts(self):
         followed_posts = Post.query.join(
             followers, (followers.c.followed_id == Post.user_id)
-        ).filter(followers.c.follower_id==self.id).order_by(Post.timestamp.desc())
+        ).filter(followers.c.follower_id == self.id)
         own_posts = Post.query.filter_by(user_id=self.id)
         return followed_posts.union(own_posts).order_by(Post.timestamp.desc())
 
@@ -64,9 +64,12 @@ def load_user(uid):
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String(140))
+    title = db.Column(db.String(256), index=True)
+    body = db.Column(db.String(65535))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    up_vote_cnt = db.Column(db.Integer, default=0)
+    down_vote_cnt = db.Column(db.Integer, default=0)
 
     def __repr__(self):
-        return f'<Post {self.body} , id={self.id} by {self.user_id} at {self.timestamp}>'
+        return f'<Post {self.title} , id={self.id} by {self.user_id} at {self.timestamp}>'

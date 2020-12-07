@@ -37,6 +37,12 @@
                 </li>
             {% else %}
                 <li>
+                    <a href="{{ url_for('explore') }}">
+                        <i class="fa fa-cc-discover fa-2x"></i>
+                        <span>发现</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ url_for('user',username=current_user.username) }}">
                         <i class="fa fa-user fa-2x"></i>
                         <span>我的</span>

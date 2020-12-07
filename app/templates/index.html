@@ -5,12 +5,39 @@
 
 {% block content %}
     {% if not current_user.is_anonymous %}
-    <h1>Hi , {{current_user.username}}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+        <h1>Hi , {{ current_user.username }}!</h1>
+        {% for post in posts %}
+            {% include '_post.html' %}
+        {% endfor %}
+        {% if form %}
+            <div class="post-form-box">
+                <h3>发表动态</h3>
+                <form action="" method="post">
+                    {{ form.hidden_tag() }}
+                    <div class="title-div">
+                        {{ form.title.label(class_='title-input-label') }}
+                        {{ form.title() }}<br>
+                        {% for error in form.title.errors %}
+                            <span class="error-msg">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    <div>
+                        {{ form.body.label(class_='body-input-label') }}
+                        {{ form.body() }}<br>
+                        {% for error in form.body.errors %}
+                            <span class="error-msg">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="submit-div">
+                        {{ form.submit }}
+                    </div>
+                </form>
+            </div>
+        {% endif %}
     {% else %}
-    <h1>您好 , 匿名用户</h1>
-    <h2 class="login-notify">登陆后方可解锁全部功能</h2>
+        <h1>您好 , 匿名用户</h1>
+        <h2 class="login-notify">登陆后方可解锁全部功能</h2>
+
     {% endif %}
+
 {% endblock content %}

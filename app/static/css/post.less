@@ -6,8 +6,9 @@
   margin: .3rem 0;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom right,rgba(25,250,233,.3),rgba(233,230,23,.4));
+  background: linear-gradient(to bottom right, rgba(25, 250, 233, .3), rgba(233, 230, 23, .4));
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, .6);
+
 
   .post-head {
     display: flex;
@@ -70,8 +71,14 @@
   .post-body {
     margin: .2rem 0;
 
+
     h2 {
+      // 单行文本添加省略号
       font-size: .6rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     p {
@@ -93,6 +100,7 @@
       padding: 0 .2rem;
       background-color: dodgerblue;
       color: white;
+
       .fa {
         font-size: .3rem;
       }

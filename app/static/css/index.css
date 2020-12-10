@@ -50,6 +50,10 @@
 }
 .post .post-body h2 {
   font-size: 0.6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .post .post-body p {
   font-size: 0.35rem;
@@ -92,6 +96,7 @@
 }
 .post-form-box #title {
   margin-left: 0.5rem;
+  padding: 0 0.2rem;
   background: linear-gradient(to right top, rgba(31, 178, 170, 0.5), rgba(131, 255, 255, 0.5));
   height: 0.5rem;
   vertical-align: middle;

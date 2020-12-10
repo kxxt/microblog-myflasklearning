@@ -68,11 +68,11 @@
     </h5>
 </div>
 <div class="main">
-    {% with messages = get_flashed_messages() %}
+    {% with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}
             <ul>
                 {% for message in messages %}
-                    <li>{{ message }}</li>
+                    <li class="flashed-message message-{{ message[0] }}">{{ message[1] }}</li>
                 {% endfor %}
             </ul>
         {% endif %}

@@ -1,0 +1,44 @@
+@font-size: .5rem;
+@import "common.less";
+
+.login-form {
+  p {
+    text-align: center;
+  }
+
+  label {
+    font-size: @font-size;
+    width: 2rem;
+    display: inline-block;
+  }
+
+  #username, #password {
+    border: none;
+    width: 5rem;
+    display: inline-block;
+    font-size: @font-size;
+    margin: .3rem;
+    border-radius: .2rem;
+  }
+
+  @remember-me-font-size: .4rem;
+
+  #rememberme {
+    vertical-align: middle;
+    width: @remember-me-font-size;
+    height: @remember-me-font-size;
+  }
+
+
+  .rememberme-label {
+    font-size: @remember-me-font-size;
+    margin-left: 0.2rem;
+    width: auto;
+    vertical-align:middle;
+  }
+
+  #submit {
+    margin-top: .6rem;
+    .fuck-button()
+  }
+}

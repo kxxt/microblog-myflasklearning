@@ -1,0 +1,17 @@
+.fuck-button(@padding: .2rem,@color: lightseagreen,@hover-color: rgba(100,178,250)) {
+  padding: @padding;
+  background-color: @color;
+  border: 1px solid @color;
+  border-radius: .2rem;
+  box-shadow: 0 0 20px 10px @color;
+  &:hover {
+    background-color: @hover-color;
+    box-shadow: 0 0 20px 10px @hover-color;
+    border-color: @hover-color;
+  }
+  &:focus {
+    background-color: @hover-color;
+    box-shadow: 0 0 20px 10px @hover-color;
+    border-color: @hover-color;
+  }
+}

@@ -4,7 +4,7 @@
   font-size: 0.3rem;
 }
 body {
-  background: gray url("../img/bg.jpg") repeat-y;
+  background: gray url("../img/bg.jpg") no-repeat fixed;
   background-size: 100% auto;
 }
 h1 {
@@ -67,5 +67,25 @@ a:hover {
 }
 .fa--mid {
   vertical-align: middle;
+}
+.flashed-message {
+  display: block;
+  font-size: 0.36rem;
+  margin: 0.2rem;
+  padding: 0.4rem;
+  background-color: white;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5);
+}
+.message-info {
+  background-color: deepskyblue;
+}
+.message-warn {
+  background-color: yellow;
+}
+.message-error {
+  background-color: red;
+}
+.message-success {
+  background-color: springgreen;
 }
 /*# sourceMappingURL=style.css.map */

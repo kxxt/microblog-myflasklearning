@@ -11,9 +11,11 @@
 
 .nav {
   //display: flex;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: @nav-height;
-  background-color: rgba(135, 206, 235,.3);
+  background-color: rgba(135, 206, 235,.6);
   //align-items: center;
 
   /*flex-start : 头部开始
@@ -64,12 +66,14 @@
 .navbar li {
   line-height:.7rem;
   height: .7rem;
+  margin: 0 .1rem;
   display: inline-block;
-  background-color: purple;
+  //background-color: purple;
 }
 
 
 .banner {
+  margin-top: @nav-height;
   height: 3.5rem;
   background-color: rgba(255,255,0,.7);
 
@@ -81,7 +85,7 @@
 }
 
 .side-ad {
-  //visibility: hidden;
+  visibility: hidden;
   position: fixed;
   width: 3rem;
   height: 8rem;

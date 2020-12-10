@@ -6,9 +6,11 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 .nav {
-  position: sticky;
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 1.2rem;
-  background-color: rgba(135, 206, 235, 0.3);
+  background-color: rgba(135, 206, 235, 0.6);
   /*flex-start : 头部开始
     flex-end
     center
@@ -48,10 +50,11 @@
 .navbar li {
   line-height: 0.7rem;
   height: 0.7rem;
+  margin: 0 0.1rem;
   display: inline-block;
-  background-color: purple;
 }
 .banner {
+  margin-top: 1.2rem;
   height: 3.5rem;
   background-color: rgba(255, 255, 0, 0.7);
 }
@@ -61,6 +64,7 @@
   font-size: 0.4rem;
 }
 .side-ad {
+  visibility: hidden;
   position: fixed;
   width: 3rem;
   height: 8rem;

@@ -25,7 +25,7 @@ def index():
                     user_id=current_user.id)
         db.session.add(post)
         db.session.commit()
-        flash('您已成功发表动态')
+        flash('您已成功发表动态', 'success')
         return redirect(url_for('index'))
     posts = current_user.get_followed_posts()
     return render_template('index.html', title="Home", posts=posts, form=form)
@@ -46,7 +46,7 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password.')
+            flash('用户名或密码错误!', 'error')
             return redirect(url_for('login'))
         login_user(user, remember=form.rememberme.data)
         next_page = request.args.get('next')
@@ -66,7 +66,7 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations! You are now a registered user!')
+        flash('恭喜! 您现在已经成为一名注册用户! 要不来充个会员吧?', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -93,7 +93,7 @@ def edit_profile():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
         db.session.commit()
-        flash('Your changes have been saved.')
+        flash('你的修改已成功保存!', 'success')
         return redirect(url_for('edit_profile'))
     elif request.method == 'GET':
         form.username.data = current_user.username
@@ -106,14 +106,14 @@ def edit_profile():
 def follow(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
-        flash(f'没有找到用户 {username}.')
+        flash(f'没有找到用户 {username}.', 'error')
         return redirect(url_for('index'))
     if user == current_user:
-        flash('你不能关注你自己哦!')
+        flash('你不能关注你自己哦!', 'error')
         return redirect(url_for('user', username=username))
     current_user.follow(user)
     db.session.commit()
-    flash(f"你关注了{username}")
+    flash(f"你关注了{username}", 'success')
     return redirect(url_for('user', username=username))
 
 
@@ -122,12 +122,12 @@ def follow(username):
 def unfollow(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
-        flash(f'没有找到用户 {username}.')
+        flash(f'没有找到用户 {username}.', 'error')
         return redirect(url_for('index'))
     if user == current_user:
-        flash("你******不能取消关注你自己")
+        flash("你******不能取消关注你自己", 'warn')
         return redirect(url_for('user', username=username))
     current_user.unfollow(user)
     db.session.commit()
-    flash(f"你取消关注了{username}")
-    return redirect(url_for('user',username=username))
+    flash(f"你取消关注了{username}", 'info')
+    return redirect(url_for('user', username=username))

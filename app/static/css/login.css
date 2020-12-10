@@ -1,0 +1,47 @@
+.login-form p {
+  text-align: center;
+}
+.login-form label {
+  font-size: 0.5rem;
+  width: 2rem;
+  display: inline-block;
+}
+.login-form #username,
+.login-form #password {
+  border: none;
+  width: 5rem;
+  display: inline-block;
+  font-size: 0.5rem;
+  margin: 0.3rem;
+  border-radius: 0.2rem;
+}
+.login-form #rememberme {
+  vertical-align: middle;
+  width: 0.4rem;
+  height: 0.4rem;
+}
+.login-form .rememberme-label {
+  font-size: 0.4rem;
+  margin-left: 0.2rem;
+  width: auto;
+  vertical-align: middle;
+}
+.login-form #submit {
+  margin-top: 0.6rem;
+  padding: 0.2rem;
+  background-color: lightseagreen;
+  border: 1px solid lightseagreen;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 20px 10px lightseagreen;
+}
+.login-form #submit:hover {
+  background-color: rgba(100, 178, 250);
+  box-shadow: 0 0 20px 10px rgba(100, 178, 250);
+  border-color: rgba(100, 178, 250);
+}
+.login-form #submit:focus {
+  background-color: rgba(100, 178, 250);
+  box-shadow: 0 0 20px 10px rgba(100, 178, 250);
+  border-color: rgba(100, 178, 250);
+}
+/*# sourceMappingURL=login.css.map */

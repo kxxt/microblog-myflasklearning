@@ -1,0 +1,38 @@
+.user-profile {
+  padding: 0.5rem;
+  min-height: 2rem;
+}
+.user-profile .user-profile-avatar {
+  float: left;
+  background-size: 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.user-profile .user-profile-info {
+  float: right;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.post-head-act {
+  display: inline-block;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 0.2rem;
+  background-color: deepskyblue;
+  color: white;
+}
+.btn-unfollow {
+  background-color: tomato;
+}
+/*# sourceMappingURL=user.css.map */

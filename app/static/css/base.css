@@ -3,14 +3,14 @@
   padding: 0.3rem;
   width: 18rem;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
-  background-color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(267.91deg, #FFE57F 9.35%, #FF7170 96.48%);
 }
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
   height: 1.2rem;
-  background-color: rgba(135, 206, 235, 0.6);
+  background: linear-gradient(92.7deg, #A2FACF -1.37%, #64ACFF 78.71%);
   /*flex-start : 头部开始
     flex-end
     center
@@ -29,16 +29,19 @@
   float: left;
   margin-left: 0.2rem;
 }
+.nav .navbar {
+  display: flex;
+}
 .nav .navbar ul {
-  height: 0.7rem;
-  line-height: 0.7rem;
-  top: 0.25rem;
-  right: 0;
-  position: absolute;
+  height: 100%;
   margin-right: 0.2rem;
 }
 .nav .navbar ul li {
-  display: inline;
+  display: inline-block;
+  height: 100%;
+}
+.nav .navbar ul li:nth-child(1) {
+  background-color: rgba(32, 178, 170, 0.5);
 }
 .navbar li > a > i {
   vertical-align: middle;
@@ -51,12 +54,12 @@
   line-height: 0.7rem;
   height: 0.7rem;
   margin: 0 0.1rem;
-  display: inline-block;
+  display: block;
 }
 .banner {
   margin-top: 1.2rem;
   height: 3.5rem;
-  background-color: rgba(255, 255, 0, 0.7);
+  background: linear-gradient(270.97deg, #FFE580 -21.36%, #FF7571 -2.45%, #EA5DAD 26.84%, #C2A0FD 64.15%, #3BF0E4 108.29%, #B2F4B6 159.03%);
 }
 .banner h5 {
   text-align: center;
@@ -64,7 +67,6 @@
   font-size: 0.4rem;
 }
 .side-ad {
-  visibility: hidden;
   position: fixed;
   width: 3rem;
   height: 8rem;
@@ -87,7 +89,7 @@
   bottom: 0;
   width: 100%;
   height: 1.6rem;
-  background-color: rgba(243, 169, 232, 0.7);
+  background: linear-gradient(270.97deg, #FFE580 -21.36%, #FF7571 -2.45%, #EA5DAD 26.84%, #C2A0FD 64.15%, #3BF0E4 108.29%, #B2F4B6 159.03%);
 }
 .bottom-ad h4 {
   text-align: center;

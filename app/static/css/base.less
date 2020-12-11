@@ -6,7 +6,8 @@
   padding: .3rem;
   width: @main-width;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, .3);
-  background-color: rgba(255,255,255,.8);
+  //background-color: rgba(255, 255, 255, .8);
+  background: linear-gradient(267.91deg, #FFE57F 9.35%, #FF7170 96.48%);
 }
 
 .nav {
@@ -15,7 +16,8 @@
   top: 0;
   width: 100%;
   height: @nav-height;
-  background-color: rgba(135, 206, 235,.6);
+  //background-color: rgba(135, 206, 235, .6);
+  background: linear-gradient(92.7deg, #A2FACF -1.37%, #64ACFF 78.71%);
   //align-items: center;
 
   /*flex-start : 头部开始
@@ -39,16 +41,29 @@
     margin-left: .2rem;
 
   }
-
-  .navbar ul{
-    height: .7rem;
-    line-height: .7rem;
-    top: @nav-height / 2 - .35rem;
-    right: 0;
-    position: absolute;
+  .navbar {
+    display: flex;
+  }
+  .navbar ul {
+    height: 100%;
+    //line-height: .7rem;
+    //top: @nav-height / 2 - .35rem;
+    //right: 0;
+    //position: absolute;
     margin-right: .2rem;
+
     li {
-      display: inline;
+      display: inline-block;
+      //width: 2rem;
+      height: 100%;
+      //margin-top: - @nav-height / 2 + .35rem;
+      a {
+
+      }
+    }
+
+    li:nth-child(1) {
+      background-color: rgba(32, 178, 170, .5);
     }
   }
 }
@@ -64,10 +79,10 @@
 }
 
 .navbar li {
-  line-height:.7rem;
+  line-height: .7rem;
   height: .7rem;
   margin: 0 .1rem;
-  display: inline-block;
+  display: block;
   //background-color: purple;
 }
 
@@ -75,7 +90,7 @@
 .banner {
   margin-top: @nav-height;
   height: 3.5rem;
-  background-color: rgba(255,255,0,.7);
+  background: linear-gradient(270.97deg, #FFE580 -21.36%, #FF7571 -2.45%, #EA5DAD 26.84%, #C2A0FD 64.15%, #3BF0E4 108.29%, #B2F4B6 159.03%);
 
   h5 {
     text-align: center;
@@ -85,14 +100,14 @@
 }
 
 .side-ad {
-  visibility: hidden;
+  //visibility: hidden;
   position: fixed;
   width: 3rem;
   height: 8rem;
   bottom: 2rem;
   background-color: green;
   padding: .2rem;
-  box-shadow: 0 0 20px 10px rgba(0,0,0,.3);
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, .3);
 }
 
 .bottom-right-ad {
@@ -110,8 +125,8 @@
   bottom: 0;
   width: 100%;
   height: 1.6rem;
-  background-color: rgba(243,169,232,.7);
-
+  //background-color: rgba(243, 169, 232, .7);
+  background: linear-gradient(270.97deg, #FFE580 -21.36%, #FF7571 -2.45%, #EA5DAD 26.84%, #C2A0FD 64.15%, #3BF0E4 108.29%, #B2F4B6 159.03%);
   h4 {
     text-align: center;
     line-height: 1.6rem;
@@ -120,7 +135,7 @@
 
 .left-ad {
   left: .3rem;
-  background: linear-gradient(to bottom right,dodgerblue,hotpink);
+  background: linear-gradient(to bottom right, dodgerblue, hotpink);
   color: white;
   //right: 50%;
   //margin-right: @main-width / 2 + .5rem;

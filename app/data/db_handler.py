@@ -1,10 +1,5 @@
 from pymongo import MongoClient
 
-users = None
-posts = None
-rels = None
-comments = None
-
 
 class DBHandler:
     def __init__(self, papp):

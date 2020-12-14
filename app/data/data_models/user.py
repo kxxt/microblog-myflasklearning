@@ -21,6 +21,9 @@ class User:
         self._last_seen = self._register_date
         self._posts_cnt = 0
 
+
+    query = BaseQuery(DBHandler.users)
+
     @property
     def id(self):
         return id
@@ -31,7 +34,9 @@ class User:
 
     @username.setter
     def username(self, value):
-        pass
+        self._username=value
+        # query.update()
+        # TODO:
 
     @property
     def email(self):
@@ -85,7 +90,3 @@ class User:
     def reset_password(self, passwd):
         pass
 
-    class query:
-        @staticmethod
-        def all():
-            pass

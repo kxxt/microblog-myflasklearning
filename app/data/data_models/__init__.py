@@ -1,4 +1,4 @@
-from data_object import DataObject
+from app.data.data_models.base.data_object import DataObject
 from user import User
 from post import Post
 from user_relation import UserRelation

@@ -1,13 +1,11 @@
 from datetime import datetime
 from hashlib import md5
 
-from pymongo.collection import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 
 import app
-from collections import MutableMapping
 
-from app.data.data_models.data_object import DataObject
+from app.data.data_models.base.data_object import DataObject
 from app.data.query import BaseQuery
 
 
@@ -33,7 +31,7 @@ class User(DataObject):
 
     @property
     def id(self):
-        return id
+        return self._id
 
     @property
     def username(self):
@@ -42,8 +40,7 @@ class User(DataObject):
     @username.setter
     def username(self, value):
         self._username = value
-        self.query.update()
-        # TODO:
+        # self.update({})
 
     @property
     def email(self):

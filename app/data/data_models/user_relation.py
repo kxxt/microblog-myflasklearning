@@ -1,14 +1,17 @@
 from datetime import datetime
 from enum import Enum
 
+from app.data.data_models import DataObject
+
 
 class RelationTypes(Enum):
     follow = 0
     blacklist = 1
 
 
-class UserRelation:
+class UserRelation(DataObject):
     def __init__(self, from_id, to_id, reltype, time_stamp=datetime.utcnow):
+        super().__init__()
         self._from_id = from_id
         self._to_id = to_id
         self._reltype = reltype

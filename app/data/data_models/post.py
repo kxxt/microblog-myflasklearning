@@ -1,10 +1,12 @@
 from datetime import datetime
 from pymongo.collection import ObjectId
 
+from app.data.data_models import DataObject
 
-class Post:
+
+class Post(DataObject):
     def __init__(self, title, body, author=None, author_id=None, time_stamp=datetime.utcnow):
-        self._id = ObjectId()
+        super().__init__()
         self._title = title
         self._body = body
         if author and author_id:

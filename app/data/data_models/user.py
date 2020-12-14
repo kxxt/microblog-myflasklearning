@@ -1,12 +1,19 @@
 from datetime import datetime
 from hashlib import md5
+
 from pymongo.collection import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 
+import app
+from collections import MutableMapping
 
-class User:
-    def __init__(self, username, passwd, email, friendly_name=None, about='', register_date=datetime.utcnow):
-        self._id = ObjectId()
+from app.data.data_models.data_object import DataObject
+from app.data.query import BaseQuery
+
+
+class User(DataObject):
+    def __init__(self, username, passwd, email, query, friendly_name=None, about='', register_date=datetime.utcnow):
+        super().__init__()
         self._username = username
         self._passwd_hash = generate_password_hash(passwd)
         if not email:
@@ -20,9 +27,9 @@ class User:
         self._is_deleted = False
         self._last_seen = self._register_date
         self._posts_cnt = 0
+        self._is_from_db = False
 
-
-    query = BaseQuery(DBHandler.users)
+    query = BaseQuery(app.mongodb.users)
 
     @property
     def id(self):
@@ -34,8 +41,8 @@ class User:
 
     @username.setter
     def username(self, value):
-        self._username=value
-        # query.update()
+        self._username = value
+        self.query.update()
         # TODO:
 
     @property
@@ -89,4 +96,5 @@ class User:
 
     def reset_password(self, passwd):
         pass
+
 

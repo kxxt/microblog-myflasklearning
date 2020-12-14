@@ -13,8 +13,9 @@ login = LoginManager(app)
 login.login_view = 'login'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-from app.db_handler import DBHandler
-mongodb = db_handler.DBHandler(app)
+from app.data.db_handler import DBHandler
+
+mongodb = DBHandler(app)
 from app import routes, models, errors
 
 if not app.debug:

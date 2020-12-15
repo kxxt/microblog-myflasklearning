@@ -11,7 +11,6 @@ class DataList(list):
         super().__init__(*args, **kwargs)
 
     def __iadd__(self, other):
-        print('Calling __iadd__')
         self.__col.update_one(self.__cond,
                               {
                                   '$push': {
@@ -20,10 +19,9 @@ class DataList(list):
                                       }
                                   }
                               })
-        super().__iadd__(other)
+        return super().__iadd__(other)
 
     def extend(self, other):
-        print('Calling extend')
         self.__iadd__(other)
 
     def __setitem__(self, key, value):

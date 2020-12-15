@@ -1,16 +1,28 @@
 from bson import ObjectId
-from functools import partialmethod
+
+
+def db_property(field_name):
+    def getter(self):
+        return self.__dict__[field_name]
+
+    def setter(self: DataObject, value):
+        self.__dict__[field_name] = value
+        self.update_field(field_name)
+
+    return property(getter, setter)
 
 
 class DataObject:
+    query = None
+
     def raw_update(self, field, value, method='$set'):
-        self.__getattribute__('query').update_one(self.__cond
-                                                  ,
-                                                  {
-                                                      method: {
-                                                          field: value
-                                                      }
-                                                  })
+        self.query.update_one(self.__cond
+                              ,
+                              {
+                                  method: {
+                                      field: value
+                                  }
+                              })
 
     def update_field(self, field, method='$set'):
         self.raw_update(field, self.__getattribute__(field), method)
@@ -26,6 +38,8 @@ class DataObject:
         self._id = ObjectId()
         self.__cond = {'_id': self._id}
 
+    id = db_property('_id')
+
     def to_dict(self):
         ret = dict()
         for k in self.__dict__.keys():
@@ -35,8 +49,8 @@ class DataObject:
 
     def full_save(self):
         cond = {'_id': self._id}
-        old = self.__getattribute__('query').find_one(cond)
+        old = self.query.find_one(cond)
         if old:
-            self.__getattribute__('query').update_one(cond, self.to_dict())
+            self.query.update_one(cond, self.to_dict())
         else:
-            self.__getattribute__('query').insert_one(self.to_dict())
+            self.query.insert_one(self.to_dict())

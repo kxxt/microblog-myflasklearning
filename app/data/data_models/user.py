@@ -5,8 +5,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 import app
 
-from app.data.data_models.base.data_object import DataObject
-from app.data.query import BaseQuery
+from .base.data_object import DataObject, db_property
+from ..query import BaseQuery
 
 
 class User(DataObject):
@@ -25,46 +25,26 @@ class User(DataObject):
         self._is_deleted = False
         self._last_seen = self._register_date
         self._posts_cnt = 0
-        self._is_from_db = False
 
-    query = BaseQuery(app.mongodb.users)
+    @staticmethod
+    def __get_fuck(cond):
+        return None
+    __custom_query = {
+        'get_fuck': __get_fuck
+    }
+    query = BaseQuery(app.mongodb.users, __custom_query)
 
-    @property
-    def id(self):
-        return self._id
-
-    @property
-    def username(self):
-        return self._username
-
-    @username.setter
-    def username(self, value):
-        self._username = value
-        # self.update({})
-
-    @property
-    def email(self):
-        return self._email
-
-    @email.setter
-    def email(self, value):
-        pass
-
-    @property
-    def friendly_name(self):
-        return self._friendly_name
-
-    @friendly_name.setter
-    def friendly_name(self, value):
-        pass
-
-    @property
-    def about(self):
-        return self._about
-
-    @about.setter
-    def about(self, value):
-        pass
+    username = db_property('_username')
+    email = db_property('_email')
+    friendly_name = db_property('_friendly_name')
+    about = db_property('_about')
+    register_date = db_property('_register_date')
+    following_count = db_property('_following_count')
+    followers_count = db_property('_followers_count')
+    last_seen = db_property('_last_seen')
+    posts_cnt = db_property('_posts_cnt')
+    passwd_hash = db_property('_passwd_hash')
+    is_deleted = db_property('_is_deleted')
 
     def __repr__(self):
         return f"User(id={self._id},username={self._username},friendly_name={self._friendly_name},email={self._email})"
@@ -72,7 +52,7 @@ class User(DataObject):
     def save(self):
         pass
 
-    def check_password(self, password):
+    def check_password(self, password: str):
         return check_password_hash(self._passwd_hash, password)
 
     def avatar(self, size):
@@ -93,5 +73,3 @@ class User(DataObject):
 
     def reset_password(self, passwd):
         pass
-
-

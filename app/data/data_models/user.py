@@ -5,12 +5,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 import app
 
-from .base.data_object import DataObject, db_property
+from .base import DataObject, db_property
 from ..query import BaseQuery
 
 
 class User(DataObject):
-    def __init__(self, username, passwd, email, query, friendly_name=None, about='', register_date=datetime.utcnow):
+    def __init__(self, username, passwd, email, friendly_name=None, about='', register_date=datetime.utcnow):
         super().__init__()
         self._username = username
         self._passwd_hash = generate_password_hash(passwd)
@@ -48,9 +48,6 @@ class User(DataObject):
 
     def __repr__(self):
         return f"User(id={self._id},username={self._username},friendly_name={self._friendly_name},email={self._email})"
-
-    def save(self):
-        pass
 
     def check_password(self, password: str):
         return check_password_hash(self._passwd_hash, password)

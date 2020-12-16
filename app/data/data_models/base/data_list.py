@@ -1,7 +1,8 @@
 class DataList(list):
     @staticmethod
     def from_list(container_id, container_collection, field_name, li):
-        ret = DataList(container_id, container_collection, field_name, *li)
+        ret = DataList(container_id, container_collection, field_name)
+        ret.extend(li)
         return ret
 
     def __init__(self, container_id, container_collection, field_name, *args, **kwargs):
